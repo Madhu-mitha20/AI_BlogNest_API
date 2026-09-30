@@ -1,42 +1,59 @@
-# AI BlogNest Frontend
+# AI BlogNest API
 
-A polished React/Vite frontend for the supplied AI BlogNest Express API.
+AI BlogNest API is a RESTful backend built with Node.js, Express, MongoDB, Mongoose, JWT authentication, bcrypt, and Gemini-powered AI content generation.
 
 ## Features
-- Login and registration
-- JWT authentication with profile loading
-- Public blog feed and search/filter
-- Blog detail pages
-- Create, edit and delete your own blogs
-- Gemini-powered blog generation
-- AI summarization
-- Responsive dashboard
-- Dark editorial UI with glass panels and micro-interactions
 
-## Run
+- User registration and login
+- JWT-protected routes
+- Blog creation, reading, updating, deleting
+- AI blog content generation
+- AI summarization
+- MVC architecture
+
+## Getting Started
+
+1. Copy `.env.example` to `.env`
+2. Install dependencies:
 
 ```bash
 npm install
+```
+
+3. Start the app:
+
+```bash
 npm run dev
 ```
 
-The backend is expected at `http://localhost:5000` by default.
+## Environment Variables
 
-If your API runs elsewhere, create `.env`:
+- `PORT`
+- `MONGO_URI`
+- `JWT_SECRET`
+- `GEMINI_API_KEY`
+- `GEMINI_MODEL`
 
-```env
-VITE_API_URL=http://localhost:5000/api
-```
+## API Endpoints
 
-## API mapping
-
+### Auth
 - `POST /api/auth/register`
 - `POST /api/auth/login`
 - `GET /api/auth/profile`
+
+### Blogs
+- `POST /api/blogs`
 - `GET /api/blogs`
 - `GET /api/blogs/:id`
-- `POST /api/blogs`
 - `PUT /api/blogs/:id`
 - `DELETE /api/blogs/:id`
+
+### AI
 - `POST /api/ai/generate-blog`
 - `POST /api/ai/summarize`
+
+## Testing with Thunder Client
+
+Use the above endpoints in Thunder Client or Postman with JSON body payloads.
+
+Example request bodies are included in the repository documentation.
